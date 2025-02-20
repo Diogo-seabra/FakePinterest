@@ -9,9 +9,25 @@
         {% endblock %}
     </title>
 </head>
-<body>
-    {% block body %}
+{% block body %}
+    <body>
     <h1>Meu primeiro site no ar sarabak.</h1>
+    {% block formulario %}
+    <form method="POST">
+        {{ form.csrf_token }}
+
+        {{ form.email.label() }}
+        {{ form.email() }}
+
+        {{ form.senha.label() }}
+        {{ form.senha() }}
+
+        {{ form.botao_confirmacao() }}
+
+    </form>
     {% endblock %}
-</body>
+
+    </body>
+{% endblock %}
+
 </html>
